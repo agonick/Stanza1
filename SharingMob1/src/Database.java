@@ -2,7 +2,10 @@
 
 
 
+import Veicoli.Veicolo;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class Database {
     public HashMap<String, Veicolo> getDbVeicoli() {
@@ -76,6 +79,25 @@ public class Database {
                 System.out.println("Utente Inesistente");
             }
         }
+    //Metodi Per Ricerca Veicolo se quello selezionato e' gia occupato
+    public Veicolo ricercaVeicoloDisponibile(Veicolo vc){
+        Veicolo vu=null;
+        for (Map.Entry<String, Veicolo> entry : getDbVeicoli().entrySet()) {
+            //manca il controllo della disponibilita
+            if(entry.getValue().getClass().equals(vc.getClass())){
+                vu= getDbVeicoli().get(entry.getKey());
+                System.out.println("il veicolo da ta e' gia prenotato ");
+            }
+            else {
+                System.out.println("nessun");
+            }
+
+
+        }
+        System.out.println("eccoti un altro mezzo "+vu.toString());
+        return vu;
+
+    }
 
 
     public Database(){
