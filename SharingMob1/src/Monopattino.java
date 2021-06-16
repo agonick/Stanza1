@@ -4,8 +4,8 @@ public class Monopattino extends VeicoliSenzaTarga{
     private int batteria;
 
     //COSTRUTTORE
-    public Monopattino(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin, boolean disponibile, boolean casco,int batteria) {
-        super(ID, posGeo, stato, prezzoXMin, disponibile,casco);
+    public Monopattino(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin, boolean casco,int batteria) {
+        super(ID, posGeo, stato, prezzoXMin,casco);
         setBatteria(batteria);
     }
 
@@ -13,4 +13,9 @@ public class Monopattino extends VeicoliSenzaTarga{
     public int getBatteria() { return batteria; }
     public void setBatteria(int batteria) { this.batteria = batteria; }
 
+    @Override
+    public String toString() {
+        return "Stato batteria =" + batteria +
+                '}';
+    }
 }

@@ -6,15 +6,13 @@ public abstract class Veicolo {
     private String posGeo;
     private StatoVeicolo stato;
     private double prezzoXMin;
-    private boolean disponibile;
 
     //COSTRUTTORE
-    public Veicolo(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin,boolean disponibile) {
+    public Veicolo(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin) {
         setID(ID);
         setPosGeo(posGeo);
         setStato(stato);
         setPrezzoXMin(prezzoXMin);
-        setDisponibile(disponibile);
     }
 
     //GET AND SET
@@ -30,9 +28,14 @@ public abstract class Veicolo {
     public double getPrezzoXMin() { return prezzoXMin; }
     public void setPrezzoXMin(double prezzoXMin) { this.prezzoXMin = prezzoXMin; }
 
-    public boolean isDisponibile() { return disponibile; }
-
-    public void setDisponibile(boolean disponibile) { this.disponibile = disponibile; }
+    @Override
+    public String toString() {
+        return "Veicolo{" +
+                "ID='" + ID + '\'' +
+                ", Posizione Geografica ='" + posGeo + '\'' +
+                ", Stato veicolo =" + stato +
+                ", Prezzo/minuto=" + prezzoXMin;
+    }
 }
 
 enum StatoVeicolo{

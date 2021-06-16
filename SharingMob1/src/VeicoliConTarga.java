@@ -5,8 +5,8 @@ public abstract class VeicoliConTarga extends Veicolo {
     private int carburante;
 
     //costruttore
-    public VeicoliConTarga(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin,boolean disponibile,String targa, Patente patente, int carburante) {
-        super(ID,posGeo,stato,prezzoXMin,disponibile);
+    public VeicoliConTarga(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin,String targa, Patente patente, int carburante) {
+        super(ID,posGeo,stato,prezzoXMin);
         this.targa = targa;
         this.patenteRichiesta = patente;
         setCarburante(carburante);
@@ -32,4 +32,12 @@ public abstract class VeicoliConTarga extends Veicolo {
     }
 
 
+    @Override
+    public String toString() {
+        super.toString();
+        return "Targa='" + targa + '\'' +
+                ", Patente richiesta= " + patenteRichiesta +
+                ", Stato carburante= " + carburante +
+                '}';
+    }
 }

@@ -4,8 +4,8 @@ public abstract class VeicoliSenzaTarga extends Veicolo {
 
     //costruttore
 
-    public VeicoliSenzaTarga(String ID,String posGeo, StatoVeicolo stato, double prezzoXMin,boolean disponibile, boolean casco) {
-        super(ID,posGeo,stato,prezzoXMin,disponibile);
+    public VeicoliSenzaTarga(String ID,String posGeo, StatoVeicolo stato, double prezzoXMin, boolean casco) {
+        super(ID,posGeo,stato,prezzoXMin);
         setCasco(casco);
     }
 
@@ -20,5 +20,8 @@ public abstract class VeicoliSenzaTarga extends Veicolo {
         this.casco = casco;
     }
 
-    
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
