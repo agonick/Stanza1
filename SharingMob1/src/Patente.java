@@ -1,5 +1,5 @@
 public enum Patente {
-    A,B,C,NO
+    A,B,C
 }
 
 /**

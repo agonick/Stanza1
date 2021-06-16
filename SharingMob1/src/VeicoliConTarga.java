@@ -1,16 +1,15 @@
-public class VeicoliConTarga extends Veicolo {
-
-
+public abstract class VeicoliConTarga extends Veicolo {
 
     private String targa;
-    private Patente patente;
+    private Patente patenteRichiesta;
     private int carburante;
 
-//costruttore
-    public VeicoliConTarga(String targa, Patente patente, int carburante) {
+    //costruttore
+    public VeicoliConTarga(String ID, String posGeo, StatoVeicolo stato, double prezzoXMin,boolean disponibile,String targa, Patente patente, int carburante) {
+        super(ID,posGeo,stato,prezzoXMin,disponibile);
         this.targa = targa;
-        this.patente = patente;
-        this.carburante = carburante;
+        this.patenteRichiesta = patente;
+        setCarburante(carburante);
     }
 
     //get e set
@@ -18,17 +17,9 @@ public class VeicoliConTarga extends Veicolo {
         return targa;
     }
 
-    public void setTarga(String targa) {
-        this.targa = targa;
-    }
-
 
     public Patente getPatente() {
-        return patente;
-    }
-
-    public void setPatente(Patente patente) {
-        this.patente = patente;
+        return patenteRichiesta;
     }
 
 
