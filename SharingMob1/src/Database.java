@@ -34,23 +34,23 @@ public class Database {
 
     HashMap<String, Utente> DbUtenti = new HashMap();
     HashMap<String, Veicolo> DbVeicoli = new HashMap();
-    private HashMap<Noleggio, Utente> DbNoleggi =new HashMap();
+    private HashMap<String, Noleggio> DbNoleggi =new HashMap();
 
-    public HashMap<Noleggio, Utente> getDbNoleggi() {
+    public HashMap<String, Noleggio> getDbNoleggi() {
         return DbNoleggi;
     }
 
-    public void setDbNoleggi(HashMap<Noleggio, Utente> dbNoleggi) {
+    public void setDbNoleggi(HashMap<String, Noleggio> dbNoleggi) {
         DbNoleggi = dbNoleggi;
     }
-    
-    public void aggiungiNoleggio(Noleggio n, Utente u){
-        this.getDbNoleggi().put(n,u);
+
+    public void aggiungiNoleggio(String idNoleggio, Noleggio n){
+        this.getDbNoleggi().put(idNoleggio,n);
     }
 
-    public void rimuoviNoleggio(Noleggio n){
-        if(this.getDbNoleggi().containsKey(n)){
-            this.getDbNoleggi().remove(n)
+    public void rimuoviNoleggio(String idNoleggio){
+        if(this.getDbNoleggi().containsKey(idNoleggio)){
+            this.getDbNoleggi().remove(idNoleggio)
         }else{
             System.out.println("Noleggio non presente");
              }
