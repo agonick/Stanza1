@@ -1,5 +1,11 @@
 public class Utente {
-    private String id;
+    /**
+     * Classe Utente che permettere di gestire gli utenti del servizio
+     * Gli utenti hanno i parametri:
+     * param: id, nome, cognome, codice fiscale, credito residuo, casco, patente.
+     *
+     */
+    private String id; // stringa generata da metodo registrazione() in sharingmobilitymain()
     private String nome;
     private String cognome;
     private String codiceFiscale;
@@ -7,6 +13,7 @@ public class Utente {
     private boolean casco;
     private Patente patente;
 
+    // costruttore
     public Utente(String nome, String cognome, String codiceFiscale, double creditoResiduo, boolean casco, Patente patente) {
         this.nome = nome;
         this.cognome = cognome;
@@ -16,7 +23,7 @@ public class Utente {
         this.patente = patente;
     }
 
-
+ // getters and setters
     public String getId() {
         return id;
     }
