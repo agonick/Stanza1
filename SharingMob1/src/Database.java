@@ -48,12 +48,35 @@ public class Database {
         this.getDbNoleggi().put(idNoleggio,n);
     }
 
-    public void rimuoviNoleggio(String idNoleggio){
-        if(this.getDbNoleggi().containsKey(idNoleggio)){
-            this.getDbNoleggi().remove(idNoleggio)
-        }else{
+    public void rimuoviNoleggio(String idNoleggio) {
+        if (this.getDbNoleggi().containsKey(idNoleggio)) {
+            this.getDbNoleggi().remove(idNoleggio);
+        } else {
             System.out.println("Noleggio non presente");
-             }
+        }
+    }
+
+
+        public void AggiungiUtente(String id ,Utente U){
+            if(getDbUtenti().containsKey(id)){
+                System.out.println("Utente Registrato");
+            }
+            else{
+                getDbUtenti().put(id,U);
+
+            }
+
+        }
+        public void EliminaUtente(Utente U){
+            if(getDbUtenti().containsValue(U)) {
+                getDbUtenti().remove(U.getId(),U);
+                System.out.println("Utente Eliminato");
+            }
+            else {
+                System.out.println("Utente Inesistente");
+            }
+        }
+
 
     public Database(){
 
