@@ -1,8 +1,6 @@
-package Database;
 
 
-import Utente.Utente;
-import Veicoli.Veicolo;
+
 
 import java.util.HashMap;
 
@@ -22,6 +20,10 @@ public class Database {
     public void setDbUtenti(HashMap<String, Utente> dbUtenti) { DbUtenti = dbUtenti;
     }
 
+
+
+
+
     @Override
     public String toString() {
         return "Database{" +
@@ -32,6 +34,27 @@ public class Database {
 
     HashMap<String, Utente> DbUtenti = new HashMap();
     HashMap<String, Veicolo> DbVeicoli = new HashMap();
+    private HashMap<Noleggio, Utente> DbNoleggi =new HashMap();
+
+    public HashMap<Noleggio, Utente> getDbNoleggi() {
+        return DbNoleggi;
+    }
+
+    public void setDbNoleggi(HashMap<Noleggio, Utente> dbNoleggi) {
+        DbNoleggi = dbNoleggi;
+    }
+    
+    public void aggiungiNoleggio(Noleggio n, Utente u){
+        this.getDbNoleggi().put(n,u);
+    }
+
+    public void rimuoviNoleggio(Noleggio n){
+        if(this.getDbNoleggi().containsKey(n)){
+            this.getDbNoleggi().remove(n)
+        }else{
+            System.out.println("Noleggio non presente");
+             }
+
     public Database(){
 
     }

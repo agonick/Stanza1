@@ -1,7 +1,4 @@
-package Noleggio;
-import  Database.Database;
-import Utente.Utente;
-import Veicoli.Veicolo;
+
 
 public class Noleggio {
     private Utente utente ;

@@ -11,13 +11,11 @@ public class SharingMobilitymain {
     }
 
     public void registraUtente(Utente utente) {
-        if (utente.getId() == null) {
-            utente.setId(generaStringautente(utente));
-            incrementaProgressivo();
-            System.out.println("Utente registrato correttamente!");
-        } else { System.out.println("utente già registrato"); }
+        utente.setId(generaStringautente(utente));
+        incrementaProgressivo();
+        // db.aggiungiUtente(utente.getId())
+        System.out.println("Utente registrato correttamente!");
     }
-
     public static String generaStringautente(Utente u){
     return u.getCognome().charAt(0)+u.getCognome().charAt(1)+u.getNome().charAt(0)+u.getNome().charAt(1) + String.valueOf(getProgressivo());
     }
