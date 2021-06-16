@@ -11,7 +11,7 @@ public class SharingMobilitymain {
     }
 
     public void registraUtente(Utente utente) {
-        if (utente.getId() != null) {
+        if (utente.getId() == null) {
             utente.setId(generaStringautente(utente));
             incrementaProgressivo();
             System.out.println("Utente registrato correttamente!");
