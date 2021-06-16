@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class Utente {
     /**
      * Classe Utente che permettere di gestire gli utenti del servizio
@@ -11,16 +14,16 @@ public class Utente {
     private String codiceFiscale;
     private double creditoResiduo;
     private boolean casco;
-    private Patente patente;
+    private ArrayList<Patente> patentiUtente;
 
     // costruttore
-    public Utente(String nome, String cognome, String codiceFiscale, double creditoResiduo, boolean casco, Patente patente) {
+    public Utente(String nome, String cognome, String codiceFiscale, double creditoResiduo, boolean casco,ArrayList<Patente> patenti) {
         this.nome = nome;
         this.cognome = cognome;
         this.codiceFiscale = codiceFiscale;
         this.creditoResiduo = creditoResiduo;
         this.casco = casco;
-        this.patente = patente;
+        this.patentiUtente = patenti;
     }
 
  // getters and setters
@@ -72,14 +75,40 @@ public class Utente {
         this.casco = casco;
     }
 
-    public Patente getPatente() {
-        return patente;
+    public ArrayList<Patente> getPatentiUtente() {
+        return patentiUtente;
     }
 
-    public void setPatente(Patente patente) {
-        this.patente = patente;
+    public void setPatentiUtente(ArrayList<Patente> patente) {
+        this.patentiUtente = patente;
     }
 
+    @Override
+    public String toString() {
+        return "Utente{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", codiceFiscale='" + codiceFiscale + '\'' +
+                ", creditoResiduo=" + creditoResiduo +
+                ", casco=" + casco +
+                ", patentiUtente=" + patentiUtente +
+                '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Utente utente = (Utente) o;
+        return Objects.equals(id, utente.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 
 }
