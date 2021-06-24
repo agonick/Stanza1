@@ -7,7 +7,6 @@ package AirBnb;
  * cognome
  * indirizzomail
  * indirizzo
- * id
  * Prenotazioni--> Pila
  *
  *
@@ -17,4 +16,5 @@ package AirBnb;
  */
 
 public class Utente {
+
 }
