@@ -7,4 +7,5 @@ package AirBnb;
  *enum superhost
  */
 public class Host extends Utente{
+
 }
