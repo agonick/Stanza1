@@ -10,4 +10,6 @@ package AirBnb;
  */
 
 public class Abitazione {
+
+
 }
