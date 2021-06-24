@@ -2,6 +2,7 @@
 
 
 
+import Veicoli.StatoVeicolo;
 import Veicoli.Veicolo;
 
 import java.util.HashMap;
@@ -84,7 +85,7 @@ public class Database {
         Veicolo vu=null;
         for (Map.Entry<String, Veicolo> entry : getDbVeicoli().entrySet()) {
             //manca il controllo della disponibilita
-            if(entry.getValue().getClass().equals(vc.getClass())){
+            if(entry.getValue().getClass().equals(vc.getClass()) && entry.getValue().getStato()==StatoVeicolo.DISPONIBILE){
                 vu= getDbVeicoli().get(entry.getKey());
                 System.out.println("il veicolo da ta e' gia prenotato ");
             }

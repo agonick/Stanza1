@@ -1,6 +1,13 @@
+import java.util.ArrayList;
+
 public class SharingMobilitymain {
 
     private static int progressivo=0;
+    ArrayList<Integer> lista= new ArrayList<>();
+
+    public ArrayList<Integer> getLista() {
+        return lista;
+    }
 
     public static int getProgressivo(){
         return progressivo;
@@ -13,7 +20,7 @@ public class SharingMobilitymain {
     public void registraUtente(Utente utente) {
         utente.setId(generaStringautente(utente));
         incrementaProgressivo();
-        // db.aggiungiUtente(utente.getId())
+         db.aggiungiUtente(utente.getId())
         System.out.println("Utente registrato correttamente!");
     }
     public static String generaStringautente(Utente u){
@@ -34,6 +41,7 @@ public class SharingMobilitymain {
     public void restituisciVeicolo(Utente u, Veicolo v){
         // togli noleggio da database noleggio
         // aggiorna stato veicolo
+        lista.contains(1);
     }
 
 
