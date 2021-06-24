@@ -1,7 +1,5 @@
 package AirBnb;
 
-import javax.xml.validation.Validator;
-
 /**
  * titolo
  * testo
@@ -17,7 +15,7 @@ public class Feedback {
     public void setId(String id) { this.id = id; }
     public String getTesto() { return testo; }
     public void setTesto(String testo) { this.testo = testo; }
-    public Valutazione getValutazione() { return valutazione; }
+    public int getValutazione() { return valutazione.getValue(); }
     //fine Costruttori
 
 
@@ -30,8 +28,9 @@ public class Feedback {
     private String testo;
     private Valutazione valutazione;
 
-
-
+    public Feedback(String titolo,String id,String testo) {
+        this.titolo = titolo;
+    }
 }
 enum Valutazione{
     //valutazione che prenderea in ingresso sempre un int(1-5) restituira valore del feedback
